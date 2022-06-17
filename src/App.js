@@ -1,8 +1,12 @@
 
-import Expenses from "./components/Expenses";
+import Expenses from "./components/Expenses/Expenses";
 import InputItem from "./components/InputItem";
+import NewExpense from "./components/NewExpense/NewExpense";
 import Greet from "./components/Greet";
+import React, {useState} from 'react';
 function App() {
+
+
 
  let textFunction = () => {
     let text = "add some text";
@@ -17,7 +21,7 @@ function App() {
       <h2 className = "test">Hello World</h2>
       <h1>TEST</h1>
       <p>{textFunction()}</p>
-      
+      <NewExpense/>
       <Expenses items={expenses}/>
 
 {/*  <inputItem/>
@@ -27,12 +31,15 @@ function App() {
       <h2>First Form -- Output saved to console and pushed to an object</h2>
       <textarea className = "text-area"></textarea>
       <button onClick={eventClick}>Click</button>
-     
+    
       </div>
       
     </div>
   );
+ 
   
+ 
+
 }
 let eventClick = function(){
   let textTestFunction =document.querySelector(".text-area").value;
@@ -40,9 +47,10 @@ let eventClick = function(){
     textArray.push({item: textTestFunction});
     console.log(textTestFunction);
     console.log(textArray);
-    
-    return textTestFunction
 }
+
+
+
 
 const textArray = [];
 const expenses = [
