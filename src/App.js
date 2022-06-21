@@ -18,10 +18,12 @@ function App() {
       <Greet nameFirst={namesArray[0]} nameLast={lastNameArray[0]}/>
       <Greet nameFirst={namesArray[1]} nameLast={lastNameArray[1]}/>
       <Greet nameFirst={namesArray[2]} nameLast={lastNameArray[2]}/>
+
       <h2 className = "test">Hello World</h2>
-      <h1>TEST</h1>
+
+
       <p>{textFunction()}</p>
-      <NewExpense/>
+      <NewExpense onAddExpense={addExpenseHandler}/>
       <Expenses items={expenses}/>
 
 {/*  <inputItem/>
@@ -61,7 +63,11 @@ const expenses = [
     amount: 94.12,
     date: new Date(2020, 7, 14),
   },
-  { id: 'e2', title: 'New TV', amount: 799.49, date: new Date(2021, 2, 12) },
+  { 
+    id: 'e2', 
+    title: 'New TV', 
+    amount: 799.49, 
+    date: new Date(2021, 2, 12) },
   {
     id: 'e3',
     title: 'Car Insurance',
@@ -75,6 +81,11 @@ const expenses = [
     date: new Date(2021, 5, 12),
   },
 ];
+
+const addExpenseHandler = (expense) => {
+  console.log('In App.js');
+  console.log(expense);
+}
 
 const namesArray = ['Mike', 'Nick', 'Matt'];
 const lastNameArray = ['Thompson', 'Wagner', 'Mitchel'];
